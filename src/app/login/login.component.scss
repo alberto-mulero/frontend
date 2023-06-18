@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+}
+
+.custom-button {
+  &.btn-primary {
+    background-color: #91FAF9;
+    border-color: #91FAF9;
+    
+    &:hover,
+    &:focus {
+      background-color: #77D5D3;
+      border-color: #77D5D3;
+    }
+    
+    &:active {
+      background-color: #5CB8B6;
+      border-color: #5CB8B6;
+    }
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  a{
+    padding:20px;
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    color: black; /* Hereda el color del texto del elemento padre */
+
+    &:hover {
+      color: #333; /* Cambia el color del texto al oscurecerse */
+    }
+
+    &:active {
+      transform: scale(1.1); /* Aumenta el tamaño del enlace al hacer clic */
+    }
+
+  }
+}

@@ -1,0 +1,166 @@
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-3 border-end ">
+      <div class="desaparecer container mt-5 sep col-2 col-md-3" style="position: fixed;">
+      
+      <a class="btn-canva" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+        aria-controls="offcanvasExample">
+        <picture class="imagencontainer img-fluid">
+          <img class="imagen" src="../../assets/ajolote-logo.png" alt="logo">
+        </picture>
+      </a>
+        <div class="row mt-5">
+          <div class="col-12 d-flex justify-content-center">
+            <button class="custom-button" [routerLink]="['/inicio', usuarioSesion?.id]">
+              <p class="text"><img class="icon" src="../../assets/house-heart.svg">Inicio</p>
+            </button>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 d-flex justify-content-center">
+            <button class="custom-button" [routerLink]="['/perfil', usuarioSesion?.id]">
+              <p class="text"><img class="icon" src="../../assets/person.svg">Perfil</p>
+            </button>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 d-flex justify-content-center">
+            <button class="custom-button" [routerLink]="['/notificacion', usuarioSesion?.id]">
+              <p class="text"><img class="icon" src="../../assets/bell.svg">Notificaciones</p>
+            </button>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 d-flex justify-content-center">
+            <button class="custom-button" [routerLink]="['/mensaje', usuarioSesion?.id]">
+              <p class="text"><img class="icon" src="../../assets/envelope-open-heart.svg">Mensajes</p>
+            </button>
+          </div>
+        </div>
+        
+        
+        <div class="dialog-container" style="margin-right: 10px;">
+          <div *ngIf="showDialog" class="dialog" style="border: 1px solid rgba(0, 0, 0, 0.622);border-radius: 50px; padding: 3px;">
+            <button class="btn btn-light" style="border-radius: 50px;" (click)="cerrarSesion()">Cerrar sesión</button>
+            <button (click)="cerrar()" class="tras"><mat-icon>close</mat-icon></button>
+          </div>
+          
+          <button (click)="openDialog()" style="border: none; width: 100%; border: 1px solid rgba(0, 0, 0, 0.365); border-radius: 50px; margin-top: 10px;">
+            <div class="cerrar-sesion">
+                  <div class="imagencontainer-close img-fluid" *ngIf="foto; else inicial" >
+                    <img style="border-radius: 50%;" class="imagen" [src]="usuarioSesion?.foto_perfil" alt="Avatar">
+                  </div>
+                  <ng-template #inicial>
+                    <app-initials-avatar name="{{usuarioSesion?.nombre_usuario}}"></app-initials-avatar>
+                  </ng-template>
+              <div class="tras"><mat-icon>more_horiz</mat-icon></div> 
+            </div>
+          </button>
+        </div>
+      </div>
+      
+
+
+      <!-- EMPIEZA EL CANVA -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            <picture class="imagencontainer img-fluid">
+              <img class="imagen" src="../../assets/ajolote-logo.png" alt="logo">
+            </picture>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body sep">
+          <div class="container mt-5">
+            <div class="row mt-5">
+              <div class="col-12 d-flex justify-content-center">
+                <button class="custom-button" [routerLink]="['/inicio', usuarioSesion?.id]">
+                  <p class="text"><img class="icon" src="../../assets/house-heart.svg">Inicio</p>
+                </button>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 d-flex justify-content-center">
+                <button class="custom-button" [routerLink]="['/perfil', usuarioSesion?.id]">
+                  <p class="text"><img class="icon" src="../../assets/person.svg">Perfil</p>
+                </button>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 d-flex justify-content-center">
+                <button class="custom-button" [routerLink]="['/notificacion', usuarioSesion?.id]">
+                  <p class="text"><img class="icon" src="../../assets/bell.svg">Notificaciones</p>
+                </button>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 d-flex justify-content-center">
+                <button class="custom-button" [routerLink]="['/mensaje', usuarioSesion?.id]">
+                  <p class="text"><img class="icon" src="../../assets/envelope-open-heart.svg">Mensajes</p>
+                </button>
+              </div>
+            </div>
+            
+
+          </div>
+        </div>
+        <div class="dialog-container">
+          <div *ngIf="showDialog" class="dialog" style="border: 1px solid rgba(0, 0, 0, 0.622);border-radius: 50px; padding: 3px;">
+            <button class="btn btn-light" style="border-radius: 50px;" (click)="cerrarSesion()">Cerrar sesión</button>
+            <button (click)="cerrar()" class="tras"><mat-icon>close</mat-icon></button>
+          </div>
+          
+          <button (click)="openDialog()" style="border: none; width: 100%; border: 1px solid rgba(0, 0, 0, 0.365); border-radius: 50px; margin-top: 10px;">
+            <div class="cerrar-sesion">
+                <div class="imagencontainer-close img-fluid" *ngIf="foto; else inicial" >
+                  <img style="border-radius: 50%;" class="imagen" [src]="usuarioSesion.foto_perfil" alt="Avatar">
+                </div>
+                <ng-template #inicial>
+                  <app-initials-avatar name="{{usuarioSesion.nombre_usuario}}"></app-initials-avatar>
+                </ng-template>
+              <div class="tras"><mat-icon>more_horiz</mat-icon></div> 
+            </div>
+          </button>
+        </div>
+        
+      </div>
+
+
+    </div>
+
+    <div class="col-9 border-end p-0 busquedad">
+      <h2>Crear Mensaje</h2>
+
+      <div class="form">
+        <div>
+          <label>Usuario Destinatario:</label>
+          <select (change)="seleccionarUsuario($event)"  class="form-select">
+            <option value="">Seleccionar usuario</option>
+            <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{ usuario.nombre_usuario }}</option>
+          </select>
+        </div>   
+      </div>
+      <hr>
+      <div class="container-mensajes">
+        <div *ngFor="let conversacion of conversaciones" class="message-content m-1" [ngClass]="{'sent-message': conversacion.id_usuario_envia==usuario.id, 'received-message': conversacion.id_usuario_envia!=usuario.id}">
+            <div *ngIf="conversacion.id_usuario_recibe.id == usuario.id || conversacion.id_usuario_envia == usuario.id">
+              <div>
+                <ng-container *ngIf="conversacion.id_usuario_envia == usuario.id; else recibido"><strong>Yo:</strong></ng-container>
+                <ng-template #recibido><strong>{{conversacion.id_usuario_recibe.nombre_usuario}}:</strong></ng-template>
+                <p>{{conversacion.contenido}}</p>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="footer">
+        <input type="text" [(ngModel)]="contenido" placeholder="Escribe tu mensaje">
+        <button (click)="crearMensaje()">Enviar Mensaje</button>
+      </div>
+      
+    </div>
+
+
+  </div>
+</div>

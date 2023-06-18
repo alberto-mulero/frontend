@@ -1,0 +1,352 @@
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-2 col-md-3 border-end ">
+      
+      <div class="desaparecer container mt-5 sep col-2 col-md-3" style="position: fixed;">
+      <a class="btn-canva" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+        aria-controls="offcanvasExample">
+        <picture class="imagencontainer img-fluid">
+          <img class="imagen" src="../../assets/ajolote-logo.png" alt="logo">
+        </picture>
+      </a>
+        <div class="row mt-5">
+          <div class="col-12 d-flex justify-content-center">
+            <button class="custom-button" [routerLink]="['/inicio', usuario?.id]">
+              <p class="text"><img class="icon" src="../../assets/house-heart.svg">Inicio</p>
+            </button>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 d-flex justify-content-center">
+            <button class="custom-button" [routerLink]="['/perfil', usuario?.id]">
+              <p class="text"><img class="icon" src="../../assets/person.svg">Perfil</p>
+            </button>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 d-flex justify-content-center">
+            <button class="custom-button" [routerLink]="['/notificacion', usuario?.id]">
+              <p class="text"><img class="icon" src="../../assets/bell.svg">Notificaciones</p>
+            </button>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 d-flex justify-content-center">
+            <button class="custom-button" [routerLink]="['/mensaje', usuario?.id]">
+              <p class="text"><img class="icon" src="../../assets/envelope-open-heart.svg">Mensajes</p>
+            </button>
+          </div>
+        </div>
+
+
+        <div class="dialog-container" style="margin-right: 10px;">
+          <div *ngIf="showDialog" class="dialog"
+            style="border: 1px solid rgba(0, 0, 0, 0.622);border-radius: 50px; padding: 3px;">
+            <button class="btn btn-light" style="border-radius: 50px;" (click)="cerrarSesion()">Cerrar sesión</button>
+            <button (click)="cerrar()" class="tras"><mat-icon>close</mat-icon></button>
+          </div>
+
+          <button (click)="openDialog()"
+            style="border: none; width: 100%; border: 1px solid rgba(0, 0, 0, 0.365); border-radius: 50px; margin-top: 10px;">
+            <div class="cerrar-sesion">
+              <div class="imagencontainer-close img-fluid" *ngIf="foto; else inicial">
+                <img style="border-radius: 50%;" class="imagen" [src]="usuario?.foto_perfil" alt="Avatar">
+              </div>
+              <ng-template #inicial>
+                <app-initials-avatar name="{{usuario?.nombre_usuario}}"></app-initials-avatar>
+              </ng-template>
+              <div class="tras"><mat-icon>more_horiz</mat-icon></div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+
+
+      <!-- EMPIEZA EL CANVA -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            <picture class="imagencontainer img-fluid">
+              <img class="imagen" src="../../assets/ajolote-logo.png" alt="logo">
+            </picture>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body sep">
+          <div class="container mt-5">
+            <div class="row mt-5">
+              <div class="col-12 d-flex justify-content-center">
+                <button class="custom-button" [routerLink]="['/inicio', usuario?.id]" (click)="recargarPagina()">
+                  <p class="text"><img class="icon" src="../../assets/house-heart.svg">Inicio</p>
+                </button>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 d-flex justify-content-center">
+                <button class="custom-button" [routerLink]="['/perfil', usuario?.id]">
+                  <p class="text"><img class="icon" src="../../assets/person.svg">Perfil</p>
+                </button>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 d-flex justify-content-center">
+                <button class="custom-button" [routerLink]="['/notificacion', usuario?.id]">
+                  <p class="text"><img class="icon" src="../../assets/bell.svg">Notificaciones</p>
+                </button>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 d-flex justify-content-center">
+                <button class="custom-button" [routerLink]="['/mensaje', usuario?.id]">
+                  <p class="text"><img class="icon" src="../../assets/envelope-open-heart.svg">Mensajes</p>
+                </button>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="dialog-container">
+          <div *ngIf="showDialog" class="dialog"
+            style="border: 1px solid rgba(0, 0, 0, 0.622);border-radius: 50px; padding: 3px;">
+            <button class="btn btn-light" style="border-radius: 50px;" (click)="cerrarSesion()">Cerrar sesión</button>
+            <button (click)="cerrar()" class="tras"><mat-icon>close</mat-icon></button>
+          </div>
+
+          <button (click)="openDialog()"
+            style="border: none; width: 100%; border: 1px solid rgba(0, 0, 0, 0.365); border-radius: 50px; margin-top: 10px;">
+            <div class="cerrar-sesion">
+              <div class="imagencontainer-close img-fluid" *ngIf="foto; else inicial">
+                <img style="border-radius: 50%;" class="imagen" [src]="usuario.foto_perfil" alt="Avatar">
+              </div>
+              <ng-template #inicial>
+                <app-initials-avatar name="{{usuario.nombre_usuario}}"></app-initials-avatar>
+              </ng-template>
+              <div class="tras"><mat-icon>more_horiz</mat-icon></div>
+            </div>
+          </button>
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="col-10 col-md-6 border-end p-0">
+      <div class="tweet-box border-bottom p-3">
+        <div class="avatar" *ngIf="foto; else inicial">
+          <img [src]="usuario.foto_perfil" alt="Avatar">
+        </div>
+        <ng-template #inicial>
+          <app-initials-avatar name="{{usuario?.nombre_usuario}}"></app-initials-avatar>
+        </ng-template>
+        <div class="mensaje">
+          <form (ngSubmit)="onSubmit()">
+            <input type="text" [(ngModel)]="contenido" name="contenido" placeholder="Escribe tu mensaje..."
+              (input)="checkInput()">
+            <div class="button-container">
+              <div>
+                <label for="upload" class="upload-icon">
+                  <mat-icon>image</mat-icon>
+                </label>
+                <input id="upload" class="upload-button" type="file" accept="image/*" (change)="onImageSelected($event)"
+                  value="Subir" name="imagen">
+              </div>
+
+              <button class="publish-button rounded-pill text-black" type="submit"
+                [disabled]="isDisabled">Publicar</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="seguidor-container">
+        <!-- Mostrar las publicaciones del usuario logeado -->
+        <div *ngFor="let publicacion of publicaciones">
+          <div class="publicacion" *ngIf="publicacion.id_usuario === usuario.id">
+            <div *ngIf="publicacion.id_usuario === usuario.id; then userAvatar else seguidoAvatar"></div>
+            <ng-template #userAvatar>
+              <div class="avatar" *ngIf="foto; else inicial">
+                <img [src]="usuario.foto_perfil" alt="Avatar">
+              </div>
+              <ng-template #inicial>
+                <app-initials-avatar name="{{ usuario.nombre_usuario }}"></app-initials-avatar>
+              </ng-template>
+              <p>{{ usuario.nombre_usuario }} {{ usuario.nombre_arroba }} · {{
+                getTimeElapsed(publicacion.fecha_publicacion) }}</p>
+            </ng-template>
+            <ng-template #seguidoAvatar>
+              <div class="avatar" *ngIf="foto; else inicial">
+                <img [src]="usuario.foto_perfil" alt="Avatar">
+              </div>
+              <ng-template #inicial>
+                <app-initials-avatar name="{{ usuario.nombre_usuario }}"></app-initials-avatar>
+              </ng-template>
+              <p>{{ publicacion.usuario.nombre_usuario }} {{ publicacion.usuario.nombre_arroba }} · {{
+                getTimeElapsed(publicacion.fecha_publicacion) }}</p>
+            </ng-template>
+            <p>{{ publicacion.contenido.mensaje }}</p>
+            <div [ngClass]="{ 'publicacion-imagen': publicacion.contenido.imagen, 'publicacion-noImagen': !publicacion.contenido.imagen }">
+              <img *ngIf="publicacion.contenido.imagen" [src]="publicacion.contenido.imagen"
+                alt="Imagen de la publicación">
+            </div>
+            <div class="publicacion-interaccion">
+              <div class="publicacion-interaccion_like">
+                <button class="btn-i" (click)="darMeGusta(publicacion)">
+                  <mat-icon>
+                    <span [ngStyle]="{
+                      'color': publicacion.num_mg==0 ? 'transparent' : 'red',
+                      '-webkit-text-stroke': publicacion.num_mg==0 ? '2px black' : '0px black'
+                    }">
+                      favorite
+                    </span>
+                  </mat-icon>
+                  <span>{{ publicacion.num_mg }}</span>
+                </button>
+              </div>
+              <div class="publicacion-interaccion_reblabbers">
+                <button class="btn-i" (click)="darReblub(publicacion)">
+                  <mat-icon>compare_arrows</mat-icon>
+                </button>
+              </div>
+              <div class="publicacion-interaccion_comentario">
+                <button class="btn-i" (click)="abrirPopUp(publicacion.id)">
+                  <mat-icon>chat</mat-icon>
+                  <span class="contador-mensajes">{{ publicacion.num_comentarios }}</span>
+                </button>
+              </div>
+              <div class="eliminar-publicacion">
+                <button (click)="eliminarPublicacion(publicacion.id)"><mat-icon>delete</mat-icon></button>
+              </div>
+            </div>
+            <hr class="hrpubli border border-2">
+          </div>
+        </div>
+        <!-- ------------------------------------- -->
+        <ng-container *ngFor="let usuarioSeguido of usuarioSeguidos">
+          <div *ngFor="let publicacion of publicaciones">
+            <div class="publicacion" *ngIf="publicacion.id_usuario === usuarioSeguido.seguido_id.id">
+              <div *ngIf="publicacion.id_usuario === usuarioSeguido.seguido_id.id; then userAvatar else seguidoAvatar">
+              </div>
+              <ng-template #userAvatar>
+                <div class="avatar" *ngIf="foto; else inicial">
+                  <img [src]="usuarioSeguido.seguido_id.foto_perfil" alt="Avatar">
+                </div>
+                <ng-template #inicial>
+                  <app-initials-avatar name="{{usuarioSeguido.seguido_id.nombre_usuario}}"></app-initials-avatar>
+                </ng-template>
+                <p>{{ usuarioSeguido.seguido_id.nombre_usuario }} {{ usuarioSeguido.seguido_id.nombre_arroba }} ·
+                  {{getTimeElapsed(publicacion.fecha_publicacion) }}</p>
+              </ng-template>
+              <ng-template #seguidoAvatar>
+                <div class="avatar" *ngIf="foto; else inicial">
+                  <img [src]="usuario.foto_perfil" alt="Avatar">
+                </div>
+                <ng-template #inicial>
+                  <app-initials-avatar name="{{usuario.nombre_usuario}}"></app-initials-avatar>
+                </ng-template>
+                <p>{{ publicacion.usuario.nombre_usuario }} {{ publicacion.usuario.nombre_arroba }} ·
+                  {{getTimeElapsed(publicacion.fecha_publicacion) }}</p>
+              </ng-template>
+              <p>{{ publicacion.contenido.mensaje }}</p>
+              <div >
+                <img *ngIf="publicacion.contenido.imagen" [src]="publicacion.contenido.imagen"
+                  alt="{{publicacion.contenido.imagen}}" >
+                  
+              </div>
+              <div class="publicacion-interaccion">
+                <div class="publicacion-interaccion_like">
+
+                  <button class="btn-i" (click)="darMeGusta(publicacion)">
+                    <mat-icon>
+                      <span [ngStyle]="{
+                          'color': publicacion.num_mg==0 ? 'transparent' : 'red',
+                          '-webkit-text-stroke': publicacion.num_mg==0 ? '2px black' : '0px black'
+                        }">
+                        favorite
+                      </span>
+                    </mat-icon>
+                    <span>{{ publicacion.num_mg }}</span>
+                  </button>
+
+                </div>
+                <div class="publicacion-interaccion_reblabbers">
+                  <button class="btn-i" (click)="darReblub(publicacion)">
+                    <mat-icon>compare_arrows</mat-icon>
+                  </button>
+                </div>
+                <div class="publicacion-interaccion_comentario">
+                  <button class="btn-i" (click)="abrirPopUp(publicacion.id)">
+                    <mat-icon>chat</mat-icon>
+                    <span class="contador-mensajes">{{ publicacion.num_comentarios }}</span>
+                  </button>
+                </div>
+              </div>
+              <hr class="hrpubli border border-2">
+            </div>
+          </div>
+        </ng-container>
+
+        <!-- Pop-up de respuesta -->
+        <div class="popup w-50 w-25-md" *ngIf="mostrarPopUp">
+          <div *ngFor="let comentario of comentarios">
+            <p>{{ comentario.contenido }}</p>
+          </div>
+          <textarea [(ngModel)]="nuevaRespuesta" placeholder="Escribe tu respuesta"></textarea>
+          <div class="btn-container">
+            <button class="btn-i" (click)="agregarRespuesta(publicaciones)">
+              <mat-icon>send</mat-icon>
+            </button>
+            <button class="btn-i" (click)="cerrarPopUp()">
+              <mat-icon>arrow_back</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+    <div class="col-md-3 ultima p-0">
+      <div class="container m-0">
+        <form (ngSubmit)="busquedadSeguidor()">
+          <div class="container-buscador">
+            <mat-icon id="icono">search</mat-icon>
+            <input type="text" placeholder="Buscar seguidor..." id="buscador" name="seguidor" [(ngModel)]="seguidor"
+              (keydown.enter)="busquedadSeguidor()" />
+          </div>
+        </form>
+        <div class="tendencia">
+
+          <h3 class="tendencia-titulo">Que esta pasando?</h3>
+
+          <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title class="card-titulo">
+                <h4>Tendencias</h4>
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <ul>
+                <li class="card-lista" *ngFor="let palabra of palabrasMasRepetidas">{{ palabra }}</li>
+              </ul>
+            </mat-card-content>
+          </mat-card>
+
+
+
+        </div>
+        <nav aria-label="Footer" role="navigation" class="enlaces">
+          <a href="">Politica de privacidad</a>
+          <a href="">Politicas de Cookies</a>
+          <a href="">Accesibilidad</a>
+          <a href="">Terminos de servicios</a>
+          <a href="">Informacion de Anuncios</a>
+          <p>© 2023 X Corp.</p>
+        </nav>
+      </div>
+    </div>
+  </div>

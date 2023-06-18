@@ -1,0 +1,30 @@
+.container {
+    position: relative;
+  }
+  
+  .card {
+    position: relative;
+    z-index: 2;
+  }
+
+  .imagen{
+    width: 10%;
+    height: 100%;
+  }
+
+  .imagencontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.btn-primary{
+  background-color: #91FAF9;
+  border-color: #91FAF9;
+  &:hover{
+    background-color: #77D5D3;
+    border-color: #77D5D3;
+  }
+}
+  
+  

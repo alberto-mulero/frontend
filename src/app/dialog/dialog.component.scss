@@ -1,0 +1,67 @@
+:host {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container {
+    position: relative;
+  }
+  
+  .card {
+    position: relative;
+    z-index: 2;
+  }
+
+  .imagen{
+    width: 10%;
+    height: 100%;
+  }
+
+  .imagencontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.btn-primary{
+  background-color: #91FAF9;
+  border-color: #91FAF9;
+  &:hover{
+    background-color: #77D5D3;
+    border-color: #77D5D3;
+  }
+}
+.cerrar{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    & button{
+      padding: 2px 5px;
+    }
+  
+  }
+  .upload-button {
+    order: 1;
+  }
+  .perfil_imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border: 1px dashed black;
+  }

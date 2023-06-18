@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row align-items-center justify-content-center" style="height: 100vh;">
+    <div class="col-md-6">
+      <div class="overlay">
+      
+      </div>
+      <div class="card shadow">
+       
+          <picture class="imagencontainer img-fluid mt-5">
+            <img class="imagen" src="../../assets/ajolote-logo.png" type="image/png">
+          </picture>
+       
+        <div class="card-body p-5">
+          <h3 class="card-title mb-4">Crea tu cuenta</h3>
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" [(ngModel)]="nombre_usuario" placeholder="Nombre" name="nombre_usuario" required>  
+              <label for="floatingInput">Nombre</label>           
+            </div>
+            <div class="form-group form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" [(ngModel)]="nombre_arroba" placeholder="Arroba" name="nombre_arroba" required>
+              <label for="floatingInput">Arroba</label>
+            </div>
+            <div class="form-group form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" [(ngModel)]="correo" placeholder="Correo" name="correo" required>
+              <label for="floatingInput">Correo</label>
+            </div>
+            <div class="form-group form-floating mb-3">
+              <input type="password" class="form-control" id="floatingInput" [(ngModel)]="contrasena" placeholder="Contraseña" name="contrasena" required>
+              <label for="floatingInput">Contraseña</label>
+            </div>
+            <div class="form-group mb-3">
+              <label class="mb-2" for="fecha_nacimiento">Fecha de nacimiento</label>
+              <input type="date" class="form-control" id="fecha_nacimiento" [(ngModel)]="fecha_nacimiento" name="fecha_nacimiento" required>
+            </div>
+            <div class="row mb-4">
+              <div class="col">
+                <button type="submit" class="btn btn-lg btn-primary custom-button rounded-pill w-100 text-black">Registrarse</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" *ngIf="cuenta">
+                <p>¿Ya tienes una cuenta? <a class="text-primary text-decoration-none" routerLink="/login">Iniciar Sesión</a></p>
+
+              </div>  
+            </div>
+            
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
