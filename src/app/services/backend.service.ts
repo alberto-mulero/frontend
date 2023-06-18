@@ -6,7 +6,7 @@ import { tap, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class BackendService {
-
+  
   constructor(private http: HttpClient) { }
 
   obtenerDatos(): Observable<any> {
@@ -22,7 +22,7 @@ export class BackendService {
 
   comprobarUsuario(usuario: any): Observable<any> {
    
-    const url = 'http://localhost:1337/';
+    const url = 'backend-production-3fb8.up.railway.app';
    
     return this.http.post(url + 'usuarios/comprobarUsuario', usuario);
   }
