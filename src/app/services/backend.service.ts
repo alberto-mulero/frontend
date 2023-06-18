@@ -22,7 +22,7 @@ export class BackendService {
 
   comprobarUsuario(usuario: any): Observable<any> {
    
-    const url = 'backend-production-3fb8.up.railway.app';
+    const url = 'https://backend-production-3fb8.up.railway.app/';
    
     return this.http.post(url + 'usuarios/comprobarUsuario', usuario);
   }
