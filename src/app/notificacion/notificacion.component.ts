@@ -40,11 +40,13 @@ export class NotificacionComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private backandService: BackendService, private renderer: Renderer2,
     private sessionStorageService: SessionStorageService,
-    private router: Router ) {}
+    private router: Router ) {
+      this.listarTodasPublicaciones();
+    }
 
   ngOnInit(): void {
     this.usuarioSesion = this.sessionStorageService.getItem('usuarioPrincipal');
-    this.listarPublicaciones(this.id);
+    
     this.route.params.subscribe(params => {
       this.backandService.listarUno(params['id']).subscribe(
         response => {
@@ -146,28 +148,12 @@ export class NotificacionComponent implements OnInit {
     
   }
 
-  listarPublicaciones(userId: any) {
-    this.backandService.obtenerUsuariosSeguidos(userId).subscribe(
+  listarTodasPublicaciones() {
+    this.backandService.listarPublicaciones().subscribe(
       (response) => {
-        const usuariosSeguidos = response.map((seguido: any) => seguido.seguido_id.id);
-        usuariosSeguidos.push(userId); // Agregar el ID del usuario logueado
-  
-        this.backandService.listarPublicaciones().subscribe(
-          (response) => {
-            this.publicaciones = response.filter((publicacion) => {
-              return usuariosSeguidos.includes(publicacion.id_usuario);
-            });
-            //console.log(this.publicaciones);
-            this.contarPalabras(this.publicaciones);
-            
-          },
-          (error) => {
-            console.error(error);
-          }
-          
-        );
-        
-      },
+        this.contarPalabras(response);
+      }
+      ,
       (error) => {
         console.error(error);
       }
