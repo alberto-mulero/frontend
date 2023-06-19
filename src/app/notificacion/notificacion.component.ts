@@ -88,7 +88,7 @@ export class NotificacionComponent implements OnInit {
 
   }
   obtenerDatosUsuario(id: any){
-      this.backandService.listarUno(id).subscribe(
+      this.backandService.listarUno(this.id).subscribe(
         response => {
           this.datosUser = response;
           console.log(this.datosUser);
