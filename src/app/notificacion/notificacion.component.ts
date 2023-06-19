@@ -46,8 +46,7 @@ export class NotificacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarioSesion = this.sessionStorageService.getItem('usuarioPrincipal');
-    this.notificacionUsuario();
-
+    
     this.route.params.subscribe(params => {
       this.backandService.listarUno(params['id']).subscribe(
         response => {
@@ -60,8 +59,9 @@ export class NotificacionComponent implements OnInit {
         error => {
           console.log(error);
         }
-      );
-    });
+        );
+      });
+      this.notificacionUsuario();
   }
 
   notificacionUsuario(){
