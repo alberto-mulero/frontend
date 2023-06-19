@@ -74,9 +74,9 @@ export class NotificacionComponent implements OnInit {
           }
         });
         console.log(usuariosNotificadores);
-      
-        this.obtenerDatosUsuario(usuariosNotificadores);
-        
+        usuariosNotificadores.forEach(usuarioId => {
+          this.obtenerDatosUsuario(usuarioId);
+        });
         //console.log(this.notificaciones);
       },
       (error) => {
@@ -91,7 +91,7 @@ export class NotificacionComponent implements OnInit {
   obtenerDatosUsuario(id: any){
       this.backandService.listarUno(id).subscribe(
         response => {
-          this.datosUser.push(response);
+          this.datosUser = response;
           console.log(this.datosUser);
           //console.log(response);
         },
