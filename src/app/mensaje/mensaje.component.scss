@@ -90,7 +90,7 @@
   }
   
   .custom-button {
-    width: 60%;
+    width: 100%;
     background-color: transparent;
     border: none;
     color: inherit;
@@ -101,7 +101,6 @@
     &:hover{
       background-color: rgba(0, 0, 0, 0.1);
       border-radius: 50px;
-      width: 100%;
     }
   }
   
@@ -126,7 +125,7 @@
   }
   
   .icon {
-    width: 10%;
+    width: 6%;
     margin-right: 10px;
     /* Ajusta este valor según el espacio deseado entre el icono y el texto */
   }
@@ -217,49 +216,6 @@
     pointer-events: none;
   }
   
-  .container-buscador {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #999;
-    border-radius: 20px;
-    margin: 20px;
-    padding: 0px 3px;
-  }
-  
-  #buscador {
-    background-color: transparent;
-    margin: 3px;
-    padding: 3px;
-    &:focus{
-      background-color: transparent;
-    }
-  }
-  
-  #icono {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 3px;
-    padding: auto;
-  }
-  
-  .tendencia {
-    background-color: #999;
-    border-radius: 20px;
-    margin: 20px;
-    
-    &-titulo{
-      color: white;
-    }
-    &  mat-card:last-child:hover {
-      background-color: #cdc9c9;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-    }
-  }
-  
   .card {
     display: flex;
     flex-direction: column;
@@ -290,52 +246,6 @@
       background-color: #77d5d394;
       border-radius: 40%;
     }
-  }
-  
-  .enlaces {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  nav {
-    font-size: 14px;
-    & p {
-      padding: 5px;
-      font-size: 14px;
-    }
-    & a {
-      text-decoration: none;
-      color: black;
-      
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  .publicacion{
-    padding: 10px;
-    &-interaccion{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-    }
-    &-imagen{
-    margin: 0 auto;
-    width: 320px;
-    height: 170px;
-    & img{
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-    }
-  }
-  .hrpubli{
-      margin: 0; /* Elimina el margin */
   }
   
   @media screen and (max-width: 840px) {
@@ -380,7 +290,16 @@
     }
   
   }
+  .inicio{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
   
+    & a{
+      width: 100%;
+      margin-left: 25%;
+    }
+  }
   .imagenPublicacion{
   display: flex;
   justify-content: center;
