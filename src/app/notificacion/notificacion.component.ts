@@ -84,8 +84,6 @@ export class NotificacionComponent implements OnInit {
       }
     );
   }
-  
-  
   direccionar(id: any){
     this.router.navigate(['/perfil', id]);
 
@@ -93,7 +91,7 @@ export class NotificacionComponent implements OnInit {
   obtenerDatosUsuario(id: any){
       this.backandService.listarUno(id).subscribe(
         response => {
-          this.datosUser.push(response);
+          this.datosUser = response;
           console.log(this.datosUser);
           //console.log(response);
         },
