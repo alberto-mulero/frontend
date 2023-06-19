@@ -159,15 +159,8 @@ export class BackendService {
     return this.http.delete(url + 'publicaciones/' + id);
   }
   notificacionUsuario(id: any): Observable<any> {
-    const url = 'https://backend-production-3fb8.up.railway.app/';
-    
-    // Agregar los encabezados CORS necesarios
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': 'https://blabbersocial.netlify.app/' // Reemplaza "Tu-Dominio" con el dominio desde donde haces la solicitud
-    });
-    
-    return this.http.post(url + 'notificacion', id, { headers });
+    const url = 'https://backend-production-3fb8.up.railway.app/notificacion/' + id ;
+    return this.http.get(url);
   }
 }
 
