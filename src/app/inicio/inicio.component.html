@@ -165,6 +165,8 @@
         <!-- Mostrar las publicaciones del usuario logeado -->
         <div *ngFor="let publicacion of publicaciones">
           <div class="publicacion" *ngIf="publicacion.id_usuario === usuario.id">
+            <div class="flex-column justify-content-between">
+            
             <div *ngIf="publicacion.id_usuario === usuario.id; then userAvatar else seguidoAvatar"></div>
             <ng-template #userAvatar>
               <div class="avatar" *ngIf="foto; else inicial">
@@ -186,6 +188,7 @@
               <p>{{ publicacion.usuario.nombre_usuario }} {{ publicacion.usuario.nombre_arroba }} · {{
                 getTimeElapsed(publicacion.fecha_publicacion) }}</p>
             </ng-template>
+          </div>
             <p>{{ publicacion.contenido.mensaje }}</p>
             <div [ngClass]="{ 'publicacion-imagen': publicacion.contenido.imagen, 'publicacion-noImagen': !publicacion.contenido.imagen }">
               <img *ngIf="publicacion.contenido.imagen" [src]="publicacion.contenido.imagen"
@@ -227,6 +230,7 @@
         <ng-container *ngFor="let usuarioSeguido of usuarioSeguidos">
           <div *ngFor="let publicacion of publicaciones">
             <div class="publicacion" *ngIf="publicacion.id_usuario === usuarioSeguido.seguido_id.id">
+              <div class="flex-column justify-content-between">
               <div *ngIf="publicacion.id_usuario === usuarioSeguido.seguido_id.id; then userAvatar else seguidoAvatar">
               </div>
               <ng-template #userAvatar>
@@ -249,6 +253,7 @@
                 <p>{{ publicacion.usuario.nombre_usuario }} {{ publicacion.usuario.nombre_arroba }} ·
                   {{getTimeElapsed(publicacion.fecha_publicacion) }}</p>
               </ng-template>
+            </div>
               <p>{{ publicacion.contenido.mensaje }}</p>
               <div [ngClass]="{ 'publicacion-imagen': publicacion.contenido.imagen, 'publicacion-noImagen': !publicacion.contenido.imagen }">
                 <img *ngIf="publicacion.contenido.imagen" [src]="publicacion.contenido.imagen"
