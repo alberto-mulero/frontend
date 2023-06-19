@@ -46,14 +46,15 @@ export class NotificacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarioSesion = this.sessionStorageService.getItem('usuarioPrincipal');
-    
+    this.notificacionUsuario();
+
     this.route.params.subscribe(params => {
       this.backandService.listarUno(params['id']).subscribe(
         response => {
           this.usuario = response;
           this.id = this.usuario.id;
           this.fotoPerfil(this.usuario);
-          this.obtenerNotificacionesUsuario();
+          //this.obtenerNotificacionesUsuario();
           
         },
         error => {
@@ -63,31 +64,42 @@ export class NotificacionComponent implements OnInit {
     });
   }
 
-  obtenerNotificacionesUsuario(): void {
-    this.backandService.obtenerNotificaciones().subscribe(
-      (response) => {
-        this.notificaciones = response;
-        const usuariosNotificadores = new Set<number>();
-        this.notificaciones.forEach(notificacion => {
-          if (notificacion.id_ajeno === this.id) {
-            usuariosNotificadores.add(notificacion.id_usuario);
-          }
-        });
-        console.log(usuariosNotificadores);
-        usuariosNotificadores.forEach(usuarioId => {
-          const usuarioNotificaciones = {
-            usuarioId: usuarioId,
-            notificaciones: this.notificaciones.filter(notificacion => notificacion.id_usuario === usuarioId)
-          };
-          this.datosUser.push(usuarioNotificaciones);
-        });
-        //console.log(this.notificaciones);
+  notificacionUsuario(){
+    this.backandService.notificacionUsuario({id : this.usuarioSesion}).subscribe(
+      response => {
+        console.log(response)
       },
-      (error) => {
-        console.error(error);
+      error => {
+        console.log(error)
       }
-    );
+    )
   }
+
+  // obtenerNotificacionesUsuario(): void {
+  //   this.backandService.obtenerNotificaciones().subscribe(
+  //     (response) => {
+  //       this.notificaciones = response;
+  //       const usuariosNotificadores = new Set<number>();
+  //       this.notificaciones.forEach(notificacion => {
+  //         if (notificacion.id_ajeno === this.id) {
+  //           usuariosNotificadores.add(notificacion.id_usuario);
+  //         }
+  //       });
+  //       console.log(usuariosNotificadores);
+  //       usuariosNotificadores.forEach(usuarioId => {
+  //         const usuarioNotificaciones = {
+  //           usuarioId: usuarioId,
+  //           notificaciones: this.notificaciones.filter(notificacion => notificacion.id_usuario === usuarioId)
+  //         };
+  //         this.datosUser.push(usuarioNotificaciones);
+  //       });
+  //       //console.log(this.notificaciones);
+  //     },
+  //     (error) => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }
   direccionar(id: any){
     this.router.navigate(['/perfil', id]);
 
