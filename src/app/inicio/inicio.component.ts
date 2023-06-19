@@ -172,7 +172,7 @@ export class InicioComponent implements OnInit {
     );
   }
   recargarPagina() {
-    this.renderer.setProperty(window, 'location', window.location.href);
+    this.listarPublicaciones(this.id);
   }
   
 
