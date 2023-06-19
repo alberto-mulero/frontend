@@ -168,7 +168,7 @@ export class BackendService {
   notificacionUsuario(id: any): Observable<any> {
     console.log(id);
     const url = 'https://backend-production-3fb8.up.railway.app/';
-    return this.http.post(url, "notificacion" , id);
+    return this.http.post(url + "notificacion", id);
   }
 }
 
