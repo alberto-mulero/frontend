@@ -89,8 +89,19 @@
   height: 70px;
 }
 
+.inicio{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20px;
+
+  & a{
+    width: 100%;
+    margin-left: 25%;
+  }
+}
+
 .custom-button {
-  width: 60%;
+  width: 100%;
   background-color: transparent;
   border: none;
   color: inherit;
@@ -101,7 +112,6 @@
   &:hover{
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 50px;
-    width: 100%;
   }
 }
 
@@ -110,7 +120,7 @@ p {
   align-items: center;
   justify-content: start;
   text-align: center;
-  font-size: 14px;
+  font-size: 25px;
   /* Puedes ajustar el tamaño de la letra según tus preferencias */
   line-height: 1;
   /* Ajusta este valor según el tamaño de la letra y el tamaño del botón */
@@ -126,7 +136,7 @@ p {
 }
 
 .icon {
-  width: 10%;
+  width: 6%;
   margin-right: 10px;
   /* Ajusta este valor según el espacio deseado entre el icono y el texto */
 }

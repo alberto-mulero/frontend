@@ -90,7 +90,7 @@
   }
   
   .custom-button {
-    width: 60%;
+    width: 100%;
     background-color: transparent;
     border: none;
     color: inherit;
@@ -101,7 +101,6 @@
     &:hover{
       background-color: rgba(0, 0, 0, 0.1);
       border-radius: 50px;
-      width: 100%;
     }
   }
   
@@ -110,7 +109,7 @@
     align-items: center;
     justify-content: start;
     text-align: center;
-    font-size: 14px;
+    font-size: 25px;
     /* Puedes ajustar el tamaño de la letra según tus preferencias */
     line-height: 1;
     /* Ajusta este valor según el tamaño de la letra y el tamaño del botón */
@@ -126,7 +125,7 @@
   }
   
   .icon {
-    width: 10%;
+    width: 6%;
     margin-right: 10px;
     /* Ajusta este valor según el espacio deseado entre el icono y el texto */
   }
@@ -217,49 +216,6 @@
     pointer-events: none;
   }
   
-  .container-buscador {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #999;
-    border-radius: 20px;
-    margin: 20px;
-    padding: 0px 3px;
-  }
-  
-  #buscador {
-    background-color: transparent;
-    margin: 3px;
-    padding: 3px;
-    &:focus{
-      background-color: transparent;
-    }
-  }
-  
-  #icono {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 3px;
-    padding: auto;
-  }
-  
-  .tendencia {
-    background-color: #999;
-    border-radius: 20px;
-    margin: 20px;
-    
-    &-titulo{
-      color: white;
-    }
-    &  mat-card:last-child:hover {
-      background-color: #cdc9c9;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-    }
-  }
-  
   .card {
     display: flex;
     flex-direction: column;
@@ -292,52 +248,6 @@
     }
   }
   
-  .enlaces {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  nav {
-    font-size: 14px;
-    & p {
-      padding: 5px;
-      font-size: 14px;
-    }
-    & a {
-      text-decoration: none;
-      color: black;
-      
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  .publicacion{
-    padding: 10px;
-    &-interaccion{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-    }
-    &-imagen{
-    margin: 0 auto;
-    width: 320px;
-    height: 170px;
-    & img{
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-    }
-  }
-  .hrpubli{
-      margin: 0; /* Elimina el margin */
-  }
-  
   @media screen and (max-width: 840px) {
     .desaparecer {
       display: none;
@@ -347,9 +257,6 @@
       pointer-events: all;
     }
   
-    .ultima {
-      display: none;
-    }
     .imagenPublicacion{
       display: flex;
       justify-content: center;
@@ -383,116 +290,16 @@
     }
   
   }
-  /* @media screen and (min-width: 768px) {
-      .imagen{
-        width: 10%;
-        height: 100%;
-      }
-    } */
-  
-  .hero{
-  background: linear-gradient(to top, white 70%, #3333334f 50%);
-  
-  }
-  
-  .header{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  &-retroceder{
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    color: black;
-    border: none;
-    border-radius: 50%;
+  .inicio{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 50px;
-    &:hover{
-      background-color: #3333334f;
-    }
-  }
-  &-usuario{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 10px;
-    & h3{
-      font-size: 16px;
-    } 
-    & p{
-      font-size: 14px;
-    }
-  }
-  }
-  .perfil{
-  &-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 10px;
-    & .boton{
-      order: 2;
-      border-radius: 40%;
-      border: 2px solid #3333334f;
-      background-color: white;
-      color: black;
+    justify-content: flex-end;
+    font-size: 20px;
   
-      &:hover{
-        background-color: #55555563;
-        border: 2px solid white;
-      }
-    }
-  }
-  &-usuario{
-    padding-left: 5px;
-    &_container{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
-    &_follow{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+    & a{
       width: 100%;
-      & p{
-        padding-right: 15px;
-        padding-left: 5px;
-      }
-    }
-    & h3 {
-      font-size: 16px;
-      text-align: start;
-    }
-    & p {
-      font-size: 14px;
+      margin-left: 25%;
     }
   }
-  }
-  .follow{
-    display: flex;
-  }
-  .btn-seguir{
-    margin-right: 15px;
-    margin-bottom: 15px;
-    background-color: transparent;
-    color: #91FAF9;
-    border: transparent;
-    &:hover{
-      background-color: #77D5D3;
-      border-color: #77D5D3;
-    }
-  }
-  
-  
   .imagenPublicacion{
   display: flex;
   justify-content: center;
@@ -618,10 +425,13 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 75%;
+  width: 67%;
   background-color: #f5f5f5;
   padding: 10px;
   display: flex;
+  & input[type="text"]{
+    background-color: transparent;
+  }
 }
 
 .footer input {
