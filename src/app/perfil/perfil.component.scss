@@ -254,7 +254,12 @@ input[type="text"] {
   margin: 3px;
   padding: auto;
 }
-
+.ultima{
+  
+  &-container{
+    width: 70%;
+  }
+}
 .tendencia {
   background-color: #dfdfdf;
   border-radius: 20px;
@@ -368,11 +373,8 @@ nav {
     pointer-events: all;
   }
 
-  .ultima{
-  
-    &-container{
-      width: 70%;
-    }
+  .ultima {
+    display: none;
   }
   .imagenPublicacion{
     display: flex;
