@@ -84,6 +84,8 @@ export class NotificacionComponent implements OnInit {
       }
     );
   }
+  
+  
   direccionar(id: any){
     this.router.navigate(['/perfil', id]);
 
