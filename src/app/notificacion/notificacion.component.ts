@@ -93,7 +93,7 @@ export class NotificacionComponent implements OnInit {
   obtenerDatosUsuario(id: any){
       this.backandService.listarUno(id).subscribe(
         response => {
-          this.datosUser.push;
+          this.datosUser.push(response);
           console.log(this.datosUser);
           //console.log(response);
         },
