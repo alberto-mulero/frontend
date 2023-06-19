@@ -242,7 +242,7 @@ input[type="text"] {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #999;
+  background-color: dfdfdf;
   border-radius: 20px;
   margin: 20px;
   padding: 0px 3px;
@@ -267,7 +267,7 @@ input[type="text"] {
 }
 
 .tendencia {
-  background-color: #999;
+  background-color: #dfdfdf;
   border-radius: 20px;
   margin: 20px;
   padding: 10px;
@@ -276,7 +276,7 @@ input[type="text"] {
   }
 
   & mat-card:last-child:hover {
-    background-color: #cdc9c9;
+    background-color: #dfdfdf;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
@@ -328,9 +328,9 @@ input[type="text"] {
 
 .enlaces {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 20px;
 }
 
 nav {
