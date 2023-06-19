@@ -250,7 +250,7 @@
                   {{getTimeElapsed(publicacion.fecha_publicacion) }}</p>
               </ng-template>
               <p>{{ publicacion.contenido.mensaje }}</p>
-              <div >
+              <div [ngClass]="{ 'publicacion-imagen': publicacion.contenido.imagen, 'publicacion-noImagen': !publicacion.contenido.imagen }">
                 <img *ngIf="publicacion.contenido.imagen" [src]="publicacion.contenido.imagen"
                   alt="{{publicacion.contenido.imagen}}" >
                   
