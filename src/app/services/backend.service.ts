@@ -159,8 +159,8 @@ export class BackendService {
     return this.http.delete(url + 'publicaciones/' + id);
   }
   notificacionUsuario(id: any): Observable<any> {
-    const url = 'https://backend-production-3fb8.up.railway.app/notificacion/' + id ;
-    return this.http.get(url);
+    const url = 'https://backend-production-3fb8.up.railway.app/';
+    return this.http.post(url + 'notificacion', id);
   }
 }
 
