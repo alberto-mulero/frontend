@@ -73,10 +73,11 @@ export class NotificacionComponent implements OnInit {
             usuariosNotificadores.add(notificacion.id_usuario);
           }
         });
+        console.log(usuariosNotificadores);
         usuariosNotificadores.forEach(usuarioId => {
           this.obtenerDatosUsuario(usuarioId);
         });
-        console.log(this.notificaciones);
+        //console.log(this.notificaciones);
       },
       (error) => {
         console.error(error);
@@ -91,8 +92,8 @@ export class NotificacionComponent implements OnInit {
       this.backandService.listarUno(id).subscribe(
         response => {
           this.datosUser = response;
-          console.log(this.datosUser);
-          console.log(response);
+          //console.log(this.datosUser);
+          //console.log(response);
         },
         error => {
           console.log(error);
