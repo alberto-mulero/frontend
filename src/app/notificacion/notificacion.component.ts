@@ -75,7 +75,7 @@ export class NotificacionComponent implements OnInit {
           }
         })
         this.obtenerDatosUsuario(this.usuarioNotificacion);
-        //console.log(this.usuarioNotificacion);
+        console.log(this.usuarioNotificacion);
         //console.log(this.notificaciones);
       },
       (error) => {
