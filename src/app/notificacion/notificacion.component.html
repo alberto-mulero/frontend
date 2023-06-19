@@ -139,7 +139,7 @@
                   <div class="noti-text">
                   <label><strong (click)="direccionar(datosUser.id)"> {{ datosUser.nombre_usuario | titlecase  }} </strong>
                     hizo una interaccion de {{ notificacion.tipo_noti }} en una publicacion</label>
-                    <p>A las {{ notificacion.fecha_notificacion | date: "dd:MM" }} minutos<mat-icon>date_range</mat-icon></p>
+                    <p>A fecha de {{ notificacion.fecha_notificacion | date: "dd:MM" }} <mat-icon>date_range</mat-icon></p>
                   </div>
               </div>
                 
