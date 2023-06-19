@@ -138,10 +138,10 @@
               <div *ngIf="(notificacion.id_usuario !== usuario.id) && (notificacion.id_ajeno === usuario.id)" class="container-notificacion_texto">
                 <div *ngFor="let usuario of datosUser">
                   <picture class="noti-img">
-                    <img [src]="usuario.foto_perfil" alt="">
+                    <img [src]="usuario[0].foto_perfil" alt="">
                   </picture>
                   <div class="noti-text">
-                  <label><strong (click)="direccionar(usuario.id)"> {{ usuario.nombre_usuario | titlecase  }} </strong>
+                  <label><strong (click)="direccionar(usuario[0].id)"> {{ usuario[0].nombre_usuario | titlecase  }} </strong>
                     hizo una interaccion de {{ notificacion.tipo_noti }} en una publicacion</label>
                     <p>A fecha de {{ notificacion.fecha_notificacion | date: "dd/MM" }} <mat-icon>date_range</mat-icon></p>
                   </div>
