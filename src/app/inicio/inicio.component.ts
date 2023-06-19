@@ -156,6 +156,11 @@ export class InicioComponent implements OnInit {
             this.publicaciones = response.filter((publicacion) => {
               return usuariosSeguidos.includes(publicacion.id_usuario);
             });
+            this.publicaciones = this.publicaciones.sort((a, b) => {
+              const fechaA = new Date(a.fecha_publicacion);
+              const fechaB = new Date(b.fecha_publicacion);
+              return fechaA.getTime() - fechaB.getTime();
+            });
             //console.log(this.publicaciones);
             this.contarPalabras(this.publicaciones);
             
