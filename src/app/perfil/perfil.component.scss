@@ -256,15 +256,16 @@ input[type="text"] {
 }
 
 .tendencia {
-  background-color: #999;
+  background-color: #dfdfdf;
   border-radius: 20px;
   margin: 20px;
-  
-  &-titulo{
-    color: white;
+  padding: 10px;
+  &-titulo {
+    color: black;
   }
-  &  mat-card:last-child:hover {
-    background-color: #cdc9c9;
+
+  & mat-card:last-child:hover {
+    background-color: #dfdfdf;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
@@ -300,25 +301,35 @@ input[type="text"] {
     background-color: #77d5d394;
     border-radius: 40%;
   }
+  & ul {
+    list-style: none;
+    font-weight: bold;
+  }
+
+  & mat-card-content {
+    width: 90%;
+  }
 }
 
 .enlaces {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 20px;
 }
 
 nav {
   font-size: 14px;
+
   & p {
     padding: 5px;
     font-size: 14px;
   }
+
   & a {
     text-decoration: none;
     color: black;
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -357,8 +368,11 @@ nav {
     pointer-events: all;
   }
 
-  .ultima {
-    display: none;
+  .ultima{
+  
+    &-container{
+      width: 70%;
+    }
   }
   .imagenPublicacion{
     display: flex;

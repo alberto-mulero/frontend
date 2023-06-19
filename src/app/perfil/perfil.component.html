@@ -192,20 +192,20 @@
             </div>
         </div>
         <div class="col-lg-4 ultima p-0">
-            <div class="container">
-              <form (ngSubmit)="busquedadSeguidor()">
-                <div class="container-buscador">
-                  <mat-icon id="icono">search</mat-icon>
-                  <input type="text" placeholder="Buscar seguidor..." id="buscador" name="seguidor" [(ngModel)]="seguidor" (keydown.enter)="busquedadSeguidor()"/>
-                </div>
+            <div class="ultima-container">
+              <div>
+
+                <form (ngSubmit)="busquedadSeguidor()">
+                  <div class="container-buscador">
+                    <mat-icon id="icono">search</mat-icon>
+                    <input type="text" placeholder="Buscar seguidor..." id="buscador" name="seguidor" [(ngModel)]="seguidor" (keydown.enter)="busquedadSeguidor()"/>
+                  </div>
               </form>
               <div class="tendencia">
+                
                 <h3 class="tendencia-titulo">Que esta pasando?</h3>
-      
+                
                 <mat-card class="card">
-                  <mat-card-header>
-                    <mat-card-title class="card-titulo"><h4>Tendencias</h4></mat-card-title>
-                  </mat-card-header>
                   <mat-card-content>
                     <ul>
                       <li class="card-lista" *ngFor="let palabra of palabrasMasRepetidas">{{ palabra }}</li>
@@ -213,9 +213,10 @@
                   </mat-card-content>
                 </mat-card>
                 
-      
-      
+                
+                
               </div>
+            </div>
                 <nav aria-label="Footer" role="navigation" class="enlaces">
                     <a href="">Politica de privacidad</a>
                     <a href="">Politicas de Cookies</a>
