@@ -66,29 +66,24 @@ export class NotificacionComponent implements OnInit {
   obtenerNotificacionesUsuario(): void {
     this.backandService.obtenerNotificaciones().subscribe(
       (response) => {
+        this.notificaciones = response;
         const usuariosNotificadores = new Set<number>();
-        const notificacioness: any = [];
-  
-        response.forEach((notificacion:any) => {
+        this.notificaciones.forEach(notificacion => {
           if (notificacion.id_ajeno === this.id) {
             usuariosNotificadores.add(notificacion.id_usuario);
-            notificacioness.push(notificacion);
           }
         });
-  
-        this.notificaciones = notificacioness;
         console.log(usuariosNotificadores);
-  
-        usuariosNotificadores.forEach((usuarioId) => {
-          this.obtenerDatosUsuario(usuarioId);
-        });
+      
+        this.obtenerDatosUsuario(usuariosNotificadores);
+        
+        //console.log(this.notificaciones);
       },
       (error) => {
         console.error(error);
       }
     );
   }
-
   direccionar(id: any){
     this.router.navigate(['/perfil', id]);
 
