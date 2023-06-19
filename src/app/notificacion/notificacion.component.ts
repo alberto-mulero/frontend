@@ -65,7 +65,7 @@ export class NotificacionComponent implements OnInit {
   }
 
   notificacionUsuario(){
-    this.backandService.notificacionUsuario({id : this.usuarioSesion}).subscribe(
+    this.backandService.notificacionUsuario({id: this.usuarioSesion.id}).subscribe(
       response => {
         console.log(response)
       },
