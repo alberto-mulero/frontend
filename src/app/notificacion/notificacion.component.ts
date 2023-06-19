@@ -14,7 +14,7 @@ export class NotificacionComponent implements OnInit {
   showDialog = false;
   usuarioNotificacion: any;
   idajeno: any;
-  datosUser: any;
+  datosUser: any[] = [];
   foto: boolean = false;
   palabrasMasRepetidas: any[] = [];
   seguidor!: string;
@@ -91,7 +91,7 @@ export class NotificacionComponent implements OnInit {
   obtenerDatosUsuario(id: any){
       this.backandService.listarUno(id).subscribe(
         response => {
-          this.datosUser = response;
+          this.datosUser.push(response);
           console.log(this.datosUser);
           //console.log(response);
         },
