@@ -165,7 +165,7 @@
         <!-- Mostrar las publicaciones del usuario logeado -->
         <div *ngFor="let publicacion of publicaciones">
           <div class="publicacion" *ngIf="publicacion.id_usuario === usuario.id">
-            <div class="flex-column justify-content-between">
+            <div class="publicacion-alinear">
             
             <div *ngIf="publicacion.id_usuario === usuario.id; then userAvatar else seguidoAvatar"></div>
             <ng-template #userAvatar>

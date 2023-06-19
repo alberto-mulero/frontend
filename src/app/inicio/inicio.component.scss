@@ -356,6 +356,14 @@ nav {
 
     }
   }
+
+  &-alinear {
+    display: flex;
+    width: 100%;
+    & p{
+      margin-left: 20px;
+    }
+  }
 }
 
 .hrpubli {
