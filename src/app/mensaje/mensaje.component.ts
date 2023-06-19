@@ -77,7 +77,6 @@ export class MensajeComponent implements OnInit {
   obtenerConversaciones(): void {
     this.backandService.obtenerConversaciones(this.id, this.idEnviar).subscribe(
       (conversaciones) => {
-        console.log(conversaciones);
         this.conversaciones = conversaciones.sort((a:any, b:any) => {
           const fechaA = new Date(a.fecha_envio);
           const fechaB = new Date(b.fecha_envio);
