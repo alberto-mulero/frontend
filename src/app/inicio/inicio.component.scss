@@ -100,6 +100,8 @@
   font-size: 20px;
 }
 
+
+
 .custom-button {
   width: 100%;
   background-color: transparent;
@@ -138,7 +140,7 @@ p {
 }
 
 .icon {
-  width: 10%;
+  width: 6%;
   margin-right: 10px;
   /* Ajusta este valor según el espacio deseado entre el icono y el texto */
 }
@@ -178,6 +180,8 @@ input[type="text"] {
   border: none;
   outline: none;
 }
+
+
 
 .button-container {
   display: flex;
@@ -266,7 +270,7 @@ input[type="text"] {
   background-color: #999;
   border-radius: 20px;
   margin: 20px;
-
+  padding: 10px;
   &-titulo {
     color: white;
   }
@@ -311,6 +315,15 @@ input[type="text"] {
     background-color: #77d5d394;
     border-radius: 40%;
   }
+
+  & ul {
+    list-style: none;
+    font-weight: bold;
+  }
+
+  & mat-card-content {
+    width: 90%;
+  }
 }
 
 .enlaces {
@@ -335,6 +348,13 @@ nav {
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+.ultima{
+  
+  &-container{
+    width: 70%;
   }
 }
 
