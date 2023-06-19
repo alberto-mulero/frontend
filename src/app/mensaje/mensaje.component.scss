@@ -347,9 +347,6 @@
       pointer-events: all;
     }
   
-    .ultima {
-      display: none;
-    }
     .imagenPublicacion{
       display: flex;
       justify-content: center;
@@ -383,115 +380,6 @@
     }
   
   }
-  /* @media screen and (min-width: 768px) {
-      .imagen{
-        width: 10%;
-        height: 100%;
-      }
-    } */
-  
-  .hero{
-  background: linear-gradient(to top, white 70%, #3333334f 50%);
-  
-  }
-  
-  .header{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  &-retroceder{
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    color: black;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 50px;
-    &:hover{
-      background-color: #3333334f;
-    }
-  }
-  &-usuario{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 10px;
-    & h3{
-      font-size: 16px;
-    } 
-    & p{
-      font-size: 14px;
-    }
-  }
-  }
-  .perfil{
-  &-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 10px;
-    & .boton{
-      order: 2;
-      border-radius: 40%;
-      border: 2px solid #3333334f;
-      background-color: white;
-      color: black;
-  
-      &:hover{
-        background-color: #55555563;
-        border: 2px solid white;
-      }
-    }
-  }
-  &-usuario{
-    padding-left: 5px;
-    &_container{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
-    &_follow{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-      & p{
-        padding-right: 15px;
-        padding-left: 5px;
-      }
-    }
-    & h3 {
-      font-size: 16px;
-      text-align: start;
-    }
-    & p {
-      font-size: 14px;
-    }
-  }
-  }
-  .follow{
-    display: flex;
-  }
-  .btn-seguir{
-    margin-right: 15px;
-    margin-bottom: 15px;
-    background-color: transparent;
-    color: #91FAF9;
-    border: transparent;
-    &:hover{
-      background-color: #77D5D3;
-      border-color: #77D5D3;
-    }
-  }
-  
   
   .imagenPublicacion{
   display: flex;
@@ -622,6 +510,9 @@
   background-color: #f5f5f5;
   padding: 10px;
   display: flex;
+  & input[type="text"]{
+    background-color: transparent;
+  }
 }
 
 .footer input {
