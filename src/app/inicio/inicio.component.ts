@@ -99,6 +99,7 @@ export class InicioComponent implements OnInit {
     this.backandService.registrarPublicacion(publicacion).subscribe(
       response => {
         this.listarPublicaciones(this.id);
+        this.contenido = '';
       },
       error => {
         console.error(error);
@@ -173,6 +174,7 @@ export class InicioComponent implements OnInit {
   }
   recargarPagina() {
     this.listarPublicaciones(this.id);
+    // this.contenido = '';
   }
   
 
