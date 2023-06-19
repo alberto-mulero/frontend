@@ -19,7 +19,7 @@ export class NotificacionComponent implements OnInit {
   palabrasMasRepetidas: any[] = [];
   seguidor!: string;
   usuarioSesion: any;
-
+  publicaciones: any[] = [];
 
 
   openDialog() {
@@ -44,7 +44,7 @@ export class NotificacionComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarioSesion = this.sessionStorageService.getItem('usuarioPrincipal');
-
+    this.listarPublicaciones(this.id);
     this.route.params.subscribe(params => {
       this.backandService.listarUno(params['id']).subscribe(
         response => {
@@ -52,6 +52,7 @@ export class NotificacionComponent implements OnInit {
           this.id = this.usuario.id;
           this.fotoPerfil(this.usuario);
           this.obtenerNotificacionesUsuario();
+          
         },
         error => {
           console.log(error);
@@ -143,5 +144,33 @@ export class NotificacionComponent implements OnInit {
     this.palabrasMasRepetidas = palabrasOrdenadas.slice(0, 5).map((item) => item[0]);
     
     
+  }
+
+  listarPublicaciones(userId: any) {
+    this.backandService.obtenerUsuariosSeguidos(userId).subscribe(
+      (response) => {
+        const usuariosSeguidos = response.map((seguido: any) => seguido.seguido_id.id);
+        usuariosSeguidos.push(userId); // Agregar el ID del usuario logueado
+  
+        this.backandService.listarPublicaciones().subscribe(
+          (response) => {
+            this.publicaciones = response.filter((publicacion) => {
+              return usuariosSeguidos.includes(publicacion.id_usuario);
+            });
+            //console.log(this.publicaciones);
+            this.contarPalabras(this.publicaciones);
+            
+          },
+          (error) => {
+            console.error(error);
+          }
+          
+        );
+        
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 }

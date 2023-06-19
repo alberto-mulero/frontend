@@ -49,6 +49,22 @@
     font-size: 24px;
     font-weight: bold;
   }
+
+  .tendencia {
+    background-color: #dfdfdf;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    &-titulo {
+      color: black;
+    }
+  
+    & mat-card:last-child:hover {
+      background-color: #dfdfdf;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
   
   
   .imagen {
@@ -65,7 +81,7 @@
   }
   
   .custom-button {
-    width: 60%;
+    width: 100%;
     background-color: transparent;
     border: none;
     color: inherit;
@@ -76,7 +92,6 @@
     &:hover{
       background-color: rgba(0, 0, 0, 0.1);
       border-radius: 50px;
-      width: 100%;
     }
   }
   
@@ -217,20 +232,6 @@
     padding: auto;
   }
   
-  .tendencia {
-    background-color: #999;
-    border-radius: 20px;
-    margin: 20px;
-    
-    &-titulo{
-      color: white;
-    }
-    &  mat-card:last-child:hover {
-      background-color: #cdc9c9;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-    }
-  }
   
   .card {
     display: flex;
@@ -264,9 +265,9 @@
   
   .enlaces {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20px;
   }
   
   nav {
