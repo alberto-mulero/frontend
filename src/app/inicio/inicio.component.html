@@ -189,7 +189,7 @@
                 getTimeElapsed(publicacion.fecha_publicacion) }}</p>
             </ng-template>
           </div>
-            <p>{{ publicacion.contenido.mensaje }}</p>
+            <p class="publicacion-texto">{{ publicacion.contenido.mensaje }}</p>
             <div [ngClass]="{ 'publicacion-imagen': publicacion.contenido.imagen, 'publicacion-noImagen': !publicacion.contenido.imagen }">
               <img *ngIf="publicacion.contenido.imagen" [src]="publicacion.contenido.imagen"
                 alt="Imagen de la publicación">
@@ -230,7 +230,7 @@
         <ng-container *ngFor="let usuarioSeguido of usuarioSeguidos">
           <div *ngFor="let publicacion of publicaciones">
             <div class="publicacion" *ngIf="publicacion.id_usuario === usuarioSeguido.seguido_id.id">
-              <div class="flex-column justify-content-between">
+              <div class="publicacion-alinear">
               <div *ngIf="publicacion.id_usuario === usuarioSeguido.seguido_id.id; then userAvatar else seguidoAvatar">
               </div>
               <ng-template #userAvatar>
@@ -254,7 +254,7 @@
                   {{getTimeElapsed(publicacion.fecha_publicacion) }}</p>
               </ng-template>
             </div>
-              <p>{{ publicacion.contenido.mensaje }}</p>
+              <p class="publicacion-texto">{{ publicacion.contenido.mensaje }}</p>
               <div [ngClass]="{ 'publicacion-imagen': publicacion.contenido.imagen, 'publicacion-noImagen': !publicacion.contenido.imagen }">
                 <img *ngIf="publicacion.contenido.imagen" [src]="publicacion.contenido.imagen"
                   alt="{{publicacion.contenido.imagen}}" >
