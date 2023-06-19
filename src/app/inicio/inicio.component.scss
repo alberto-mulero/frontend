@@ -242,7 +242,7 @@ input[type="text"] {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: dfdfdf;
+  background-color: #dfdfdf;
   border-radius: 20px;
   margin: 20px;
   padding: 0px 3px;
@@ -272,7 +272,7 @@ input[type="text"] {
   margin: 20px;
   padding: 10px;
   &-titulo {
-    color: white;
+    color: black;
   }
 
   & mat-card:last-child:hover {
