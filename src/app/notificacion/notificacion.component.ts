@@ -54,6 +54,7 @@ export class NotificacionComponent implements OnInit {
           this.id = this.usuario.id;
           this.fotoPerfil(this.usuario);
           //this.obtenerNotificacionesUsuario();
+          this.notificacionUsuario(this.id);
           
         },
         error => {
@@ -61,11 +62,10 @@ export class NotificacionComponent implements OnInit {
         }
         );
       });
-      this.notificacionUsuario();
   }
 
-  notificacionUsuario(){
-    console.log(this.id);
+  notificacionUsuario(id: number){
+    console.log(id);
     this.backandService.notificacionUsuario(this.id).subscribe(
       response => {
         console.log("hola");
