@@ -19,7 +19,7 @@ export class PerfilComponent implements OnInit {
   palabrasMasRepetidas: any[] = [];
   publicaciones: any[] = [];
   usuarioSesion: any;
-  seguido!: boolean;
+  seguido: any[] = [];
   seguidor!: string;
   showDialog = false;
 
@@ -197,13 +197,7 @@ export class PerfilComponent implements OnInit {
       response => {
         console.log(response);
         if (response.id) {
-          if (response.length <= 0) {
-            this.seguido = false;
-          }
-          else{
-            this.seguido = true;
-          }
-          console.log(this.seguido);
+          this.seguido = response;
         }
       },
       error => {
