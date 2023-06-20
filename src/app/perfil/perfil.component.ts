@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, AfterViewInit  } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BackendService } from '../services/backend.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,7 +12,7 @@ import { SessionStorageService } from '../services/session-storage.service';
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.scss']
 })
-export class PerfilComponent implements OnInit, AfterViewInit {
+export class PerfilComponent implements OnInit {
   id: any;
   usuario: any;
   foto: boolean = false;
@@ -22,18 +22,8 @@ export class PerfilComponent implements OnInit, AfterViewInit {
   seguido!: boolean;
   seguidor!: string;
   showDialog = false;
-  alturaPantalla!: number;
 
-  ngAfterViewInit() {
-    this.calcularAlturaPantalla();
-  }
-  calcularAlturaPantalla() {
-    const alturaViewport = window.innerHeight;
-    const alturaContenido = document.documentElement.scrollHeight;
-    this.alturaPantalla = Math.max(alturaViewport, alturaContenido);
-    this.alturaPantalla -= 300;
-    console.log(this.alturaPantalla);
-  }
+
 
   openDialog2() {
     this.showDialog = true;
@@ -121,7 +111,7 @@ export class PerfilComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: "50%",
       height: "72%",
-      position: {top: '-550px', left: "25%" },
+      position: { bottom:"200px", top: "-2000px", left: "25%" },
       data: { "usuario": this.usuario }
     });
 
