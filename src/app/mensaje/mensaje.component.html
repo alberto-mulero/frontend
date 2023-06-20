@@ -148,7 +148,7 @@
             <div *ngIf="conversacion.id_usuario_recibe.id == usuario.id || conversacion.id_usuario_envia == usuario.id">
               <div>
                 <ng-container *ngIf="conversacion.id_usuario_envia == usuario.id; else recibido"><strong>Yo:</strong></ng-container>
-                <ng-template #recibido><strong>{{conversacion.id_usuario_recibe.nombre_usuario}}:</strong></ng-template>
+                <ng-template #recibido><strong>{{conversacion.id_usuario_envia.nombre_usuario}}:</strong></ng-template>
                 <p>{{conversacion.contenido}}</p>
               </div>
             </div>
