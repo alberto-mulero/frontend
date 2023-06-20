@@ -22,7 +22,7 @@ export class PerfilComponent implements OnInit {
   seguido: any[] = [];
   seguidor!: string;
   showDialog = false;
-  compararSeguidor: any;
+  
 
 
   openDialog2() {
@@ -210,7 +210,6 @@ export class PerfilComponent implements OnInit {
     const seguidor = this.seguidor;
     this.backandService.comprobarUsuarioArroba(seguidor).subscribe(
       response => {
-        this.compararSeguidor = response.seguidor_id;
         this.router.navigate(['/perfil', response.usuario.id]);
       },
       error => {
