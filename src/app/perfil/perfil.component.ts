@@ -121,7 +121,7 @@ export class PerfilComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: "50%",
       height: "72%",
-      position: {top: "-"+this.alturaPantalla+"px", left: "25%" },
+      position: {top: `-${this.alturaPantalla}px`, left: "25%" },
       data: { "usuario": this.usuario }
     });
 
