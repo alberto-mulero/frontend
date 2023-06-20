@@ -68,6 +68,7 @@ export class NotificacionComponent implements OnInit {
     console.log(id);
     this.backandService.notificacionUsuario({id: id}).subscribe(
       response => {
+        this.notificaciones = response;
         console.log(response)
       },
       error => {
@@ -76,47 +77,10 @@ export class NotificacionComponent implements OnInit {
     )
   }
 
-  // obtenerNotificacionesUsuario(): void {
-  //   this.backandService.obtenerNotificaciones().subscribe(
-  //     (response) => {
-  //       this.notificaciones = response;
-  //       const usuariosNotificadores = new Set<number>();
-  //       this.notificaciones.forEach(notificacion => {
-  //         if (notificacion.id_ajeno === this.id) {
-  //           usuariosNotificadores.add(notificacion.id_usuario);
-  //         }
-  //       });
-  //       console.log(usuariosNotificadores);
-  //       usuariosNotificadores.forEach(usuarioId => {
-  //         const usuarioNotificaciones = {
-  //           usuarioId: usuarioId,
-  //           notificaciones: this.notificaciones.filter(notificacion => notificacion.id_usuario === usuarioId)
-  //         };
-  //         this.datosUser.push(usuarioNotificaciones);
-  //       });
-  //       //console.log(this.notificaciones);
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
   direccionar(id: any){
     this.router.navigate(['/perfil', id]);
 
   }
-  // obtenerDatosUsuario(id: any){
-  //     this.backandService.listarUno(id).subscribe(
-  //       response => {
-  //         this.datosUser.push(response);
-  //         console.log(this.datosUser);
-  //         //console.log(response);
-  //       },
-  //       error => {
-  //         console.log(error);
-  //       }
-  //     );
-  // }
   fotoPerfil(usuario: any) {
     if (usuario.foto_perfil) {
       this.foto = true;
