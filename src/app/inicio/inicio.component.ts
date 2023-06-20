@@ -50,7 +50,9 @@ export class InicioComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private backandService: BackendService,
-     private renderer: Renderer2, private router: Router,private sessionStorageService: SessionStorageService) {}
+     private renderer: Renderer2, private router: Router,private sessionStorageService: SessionStorageService) {
+      this.listarTodasPublicaciones();
+     }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -308,6 +310,18 @@ export class InicioComponent implements OnInit {
         //this.listarPublicaciones(this.id);
         console.log(response);
       },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  listarTodasPublicaciones() {
+    this.backandService.listarPublicaciones().subscribe(
+      (response) => {
+        this.contarPalabras(response);
+      }
+      ,
       (error) => {
         console.error(error);
       }
