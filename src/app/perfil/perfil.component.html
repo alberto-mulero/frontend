@@ -159,11 +159,16 @@
                           <p>{{usuario?.nombre_arroba}}</p>
                         </div>
                         <p>{{usuario?.fecha_nacimiento | date: 'yyyy-MM-dd' }} <mat-icon>date_range</mat-icon></p>
-                        <div class="perfil-usuario_follow">
-                          <button *ngIf="usuario?.id !== usuarioSesion.id && !seguido" class="btn-seguir btn btn-primary p-2"
-                           (click)="seguir()">
+                        <div class="perfil-usuario_follow" *ngIf="usuario?.id !== usuarioSesion.id">
+                          <div *ngIf="!seguido">
+                            <button  class="btn-seguir btn btn-primary p-2"
+                            (click)="seguir()">
                             <mat-icon>person_add</mat-icon>
                           </button>
+                        </div>
+                        <div *ngIf="seguido">
+                          <p>Siguiendo</p>
+                        </div>
                         </div>
                         </div>
                     </div>
