@@ -162,7 +162,7 @@
                           <p>{{usuario?.fecha_nacimiento | date: 'yyyy-MM-dd' }} <mat-icon>date_range</mat-icon></p>
                         </div>
                         <div class="perfil-usuario_follow" *ngIf="usuario?.id !== usuarioSesion.id">
-                          <div *ngIf="seguido === false; else siguiendoTemplate">
+                          <div *ngIf="seguido == false; else siguiendoTemplate">
                             <button class="btn-seguir btn btn-primary p-2" (click)="seguir()">
                               <mat-icon>person_add</mat-icon>
                             </button>
