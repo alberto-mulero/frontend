@@ -82,6 +82,7 @@ export class MensajeComponent implements OnInit {
           const fechaB = new Date(b.fecha_envio);
           return fechaA.getTime() - fechaB.getTime();
         });
+        console.log(conversaciones);
       },
       (error) => {
         console.error(error);
