@@ -135,7 +135,7 @@
       <!-- CONTENIDO -->
       <div class="col-10 col-md-8 col-lg-4 border-end p-0">
             <div *ngFor="let notificacion of notificaciones">
-              <div *ngIf="(notificacion.id_usuario !== notificacion.id_ajeno.id)" class="container-notificacion_texto">
+              <div *ngIf="(notificacion.id_usuario.id !== notificacion.id_ajeno.id)" class="container-notificacion_texto">
                     <picture class="noti-img">
                       <img [src]="notificacion.id_usuario.foto_perfil" alt="">
                     </picture>
