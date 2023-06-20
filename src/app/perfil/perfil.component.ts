@@ -19,10 +19,10 @@ export class PerfilComponent implements OnInit {
   palabrasMasRepetidas: any[] = [];
   publicaciones: any[] = [];
   usuarioSesion: any;
-  seguido: boolean = false;
+  seguido: any;
   seguidor!: string;
   showDialog = false;
-
+  
 
 
   openDialog2() {
@@ -111,7 +111,7 @@ export class PerfilComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: "50%",
       height: "72%",
-      position: { top: "-20%", left: "25%" },
+      position: { bottom:"400px", top: "-2000px", left: "25%" },
       data: { "usuario": this.usuario }
     });
 
@@ -197,9 +197,7 @@ export class PerfilComponent implements OnInit {
       response => {
         console.log(response);
         if (response.id) {
-          
-          this.seguido = true;
-          console.log(this.seguido);
+          this.seguido = response;
         }
       },
       error => {

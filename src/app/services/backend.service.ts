@@ -41,7 +41,6 @@ export class BackendService {
     formData.append('num_comentarios', publicacion.num_comentarios);
     formData.append('id_usuario', publicacion.id_usuario);
     formData.append('imagen', publicacion.imagen);
-    console.log(formData);
   
     const url = 'https://backend-production-3fb8.up.railway.app/';
   
@@ -74,7 +73,6 @@ export class BackendService {
       id_usuario: id_usuario,
       id_publicaciones: id_publicacion
     };  
-    console.log(data);
     return this.http.post<any>('https://backend-production-3fb8.up.railway.app/reblabbers', data);
   }
 
@@ -86,7 +84,6 @@ export class BackendService {
     formData.append('fecha_nacimiento', usuario.fecha_nacimiento);
     formData.append('foto_perfil', usuario.foto_perfil);
     formData.append('biografia', usuario.biografia);
-    console.log(formData);
 
     return this.http.post(url + 'usuarios/actualizar', formData);
   }
@@ -101,7 +98,6 @@ export class BackendService {
       id_publicaciones: idPublicacion
   };
 
-  console.log(respuesta);
 
     return this.http.post(url, respuesta);
   }
@@ -109,7 +105,6 @@ export class BackendService {
   obtenerComentarios(publicacionId: number) {
     const url = 'https://backend-production-3fb8.up.railway.app/comentarios/' + publicacionId;
      
-    console.log(publicacionId)// Reemplaza con la URL correcta para obtener los comentarios de la publicación
     return this.http.get(url);
   }
 
@@ -150,7 +145,6 @@ export class BackendService {
     const url = 'https://backend-production-3fb8.up.railway.app/';
     // const params = new HttpParams().set('usuarioId', usuarioId);
     // console.log(params);
-    console.log(url);
     
     return this.http.post(url + 'comprobarMensajes', usuarioIds);
   }
@@ -161,14 +155,12 @@ export class BackendService {
   }
 
   eliminarPublicacion(id: any): Observable<any> {
-    console.log(id);
     const url = 'https://backend-production-3fb8.up.railway.app/';
     return this.http.delete(url + 'publicaciones/' + id);
   }
   notificacionUsuario(id: any): Observable<any> {
-    console.log(id);
-    const url = 'https://backend-production-3fb8.up.railway.app/notificaciones' + id;
-    return this.http.get(url)
+    const url = 'https://backend-production-3fb8.up.railway.app/';
+    return this.http.post(url + 'notificacion', id);
   }
 }
 

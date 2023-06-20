@@ -133,25 +133,22 @@
       </div>
 
       <!-- CONTENIDO -->
-      <!-- <div class="col-10 col-md-8 col-lg-4 border-end p-0">
+      <div class="col-10 col-md-8 col-lg-4 border-end p-0">
             <div *ngFor="let notificacion of notificaciones">
-              <div *ngIf="(notificacion.id_usuario !== usuario.id) && (notificacion.id_ajeno === usuario.id)" class="container-notificacion_texto">
-                  <div *ngFor="let usuario of datosUser">
+              <div *ngIf="(notificacion.id_usuario.id !== notificacion.id_ajeno)" class="container-notificacion_texto">
                     <picture class="noti-img">
-                      <img [src]="usuario.foto_perfil" alt="">
+                      <img [src]="notificacion.id_usuario.foto_perfil" alt="">
                     </picture>
                     <div class="noti-text">
-                    <label><strong (click)="direccionar(usuario.id)"> {{ usuario.nombre_usuario | titlecase  }} </strong>
+                    <label><strong (click)="direccionar(notificacion.id_usuario.id)"> {{ notificacion.id_usuario.nombre_usuario | titlecase  }} </strong>
                       hizo una interaccion de {{ notificacion.tipo_noti }} en una publicacion</label>
                       <p>A fecha de {{ notificacion.fecha_notificacion | date: "dd/MM" }} <mat-icon>date_range</mat-icon></p>
-                    </div>
-                  </div>
-                  
+                    </div>                  
               </div>
                 
             </div>
               
-      </div> -->
+      </div>
 
       <!-- TENDENCIAS -->
       <div class="col-lg-4 ultima p-0">

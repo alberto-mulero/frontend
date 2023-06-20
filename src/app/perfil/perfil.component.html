@@ -19,7 +19,7 @@
           <div class="row mt-5">
             <div class="col-12 d-flex justify-content-center">
               <button class="custom-button" [routerLink]="['/perfil', usuarioSesion?.id]">
-                <p class="text"><img class="icon" src="../../assets/person.svg">Perfil</p>
+                <p class="text"><img class="icon" src="../../assets/person.svg"><strong>Perfil</strong></p>
               </button>
             </div>
           </div>
@@ -150,25 +150,28 @@
                       <ng-template #inicial>
                         <app-initials-avatar name="{{usuario?.nombre_usuario}}"></app-initials-avatar>
                       </ng-template>
-                        <button class="boton" (click)="openDialog()">Editar perfil</button>
+                        <button class="boton" (click)="openDialog()"><span>Editar perfil</span></button>
                     </div>
                     <div class="perfil-usuario">
                       <div class="perfil-usuario_container">
-                        <div>
-                          <h3>{{usuario?.nombre_usuario}}</h3>
-                          <p>{{usuario?.nombre_arroba}}</p>
-                        </div>
-                        <p>{{usuario?.fecha_nacimiento | date: 'yyyy-MM-dd' }} <mat-icon>date_range</mat-icon></p>
-                        <div class="perfil-usuario_follow">
-                          <div class="follow">
-                            <p>{{usuario?.seguidos}} seguidos</p>
-                            <p>{{usuario?.seguidores}} seguidores</p>
+                        <div class="perfil-usuario_container-text">
+                          <div>
+                            <h3>{{usuario?.nombre_usuario}}</h3>
+                            <p>{{usuario?.nombre_arroba}}</p>
                           </div>
-                          <button *ngIf="usuario?.id !== usuarioSesion.id && !seguido" class="btn-seguir btn btn-primary p-2"
-                           (click)="seguir()">
-                            <mat-icon>person_add</mat-icon>
-                          </button>
+                          <p>{{usuario?.fecha_nacimiento | date: 'yyyy-MM-dd' }} <mat-icon>date_range</mat-icon></p>
                         </div>
+                        <div class="perfil-usuario_follow" *ngIf="usuario?.id !== usuarioSesion.id">
+                          <div *ngIf="seguido.length <= 0; else siguiendoTemplate">
+                            <button class="btn-seguir btn btn-primary p-2" (click)="seguir()">
+                              <mat-icon>person_add</mat-icon>
+                            </button>
+                          </div>
+                          <ng-template #siguiendoTemplate>
+                            <p>Siguiendo</p>
+                          </ng-template>
+                        </div>
+                        
                         </div>
                     </div>
                 </div>
@@ -182,7 +185,7 @@
                             <p class="nombre-info_p"><span>Publicado hace-</span> {{ getTimeElapsed(publicacion.fecha_publicacion) }}</p>
                     </div>
 
-                    <p>{{ publicacion.contenido.mensaje }}</p>
+                    <p class="nombre-contenido">{{ publicacion.contenido.mensaje }}</p>
                     <div class="publicacion-imagen" *ngIf="publicacion.contenido.imagen !== ''">
                         <img [src]="publicacion.contenido.imagen"
                         alt="Imagen de la publicación">
