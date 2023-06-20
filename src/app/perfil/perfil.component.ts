@@ -19,7 +19,7 @@ export class PerfilComponent implements OnInit {
   palabrasMasRepetidas: any[] = [];
   publicaciones: any[] = [];
   usuarioSesion: any;
-  seguido: any[] = [];
+  seguido: any;
   seguidor!: string;
   showDialog = false;
   
