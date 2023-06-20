@@ -64,7 +64,6 @@ export class DialogComponent implements OnInit {
       }
     );
     this.onClose();
-    this.recargarPagina();
   }
   
 
