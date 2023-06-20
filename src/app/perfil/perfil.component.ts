@@ -200,7 +200,9 @@ export class PerfilComponent implements OnInit {
           if (response.length <= 0) {
             this.seguido = false;
           }
-          this.seguido = true;
+          else{
+            this.seguido = true;
+          }
           console.log(this.seguido);
         }
       },
