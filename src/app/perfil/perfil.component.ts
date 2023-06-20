@@ -111,7 +111,7 @@ export class PerfilComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: "50%",
       height: "72%",
-      position: {bottom: "100%", left: "25%" },
+      position: {top: "0%", left: "25%" },
       data: { "usuario": this.usuario }
     });
 
