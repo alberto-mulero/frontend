@@ -183,7 +183,7 @@
                             <p class="nombre-info_p"><span>Publicado hace-</span> {{ getTimeElapsed(publicacion.fecha_publicacion) }}</p>
                     </div>
 
-                    <p>{{ publicacion.contenido.mensaje }}</p>
+                    <p class="nombre-contenido">{{ publicacion.contenido.mensaje }}</p>
                     <div class="publicacion-imagen" *ngIf="publicacion.contenido.imagen !== ''">
                         <img [src]="publicacion.contenido.imagen"
                         alt="Imagen de la publicación">
