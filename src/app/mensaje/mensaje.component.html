@@ -145,7 +145,7 @@
       <hr>
       <div class="container-mensajes">
         <div *ngFor="let conversacion of conversaciones" class="message-content m-1" [ngClass]="{'sent-message': conversacion.id_usuario_envia==usuario.id, 'received-message': conversacion.id_usuario_envia!=usuario.id}">
-            <div *ngIf="conversacion.id_usuario_recibe == usuario.id || conversacion.id_usuario_envia.id == usuario.id">
+            <div *ngIf="conversacion.id_usuario_recibe.id == usuario.id || conversacion.id_usuario_envia.id == usuario.id">
               <div>
                 <ng-container *ngIf="conversacion.id_usuario_envia.id == usuario.id; else recibido"><strong>Yo:</strong></ng-container>
                 <ng-template #recibido><strong>{{conversacion.id_usuario_recibe.nombre_usuario}}:</strong></ng-template>
