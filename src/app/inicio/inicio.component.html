@@ -51,10 +51,10 @@
             style="border: none; width: 100%; border: 1px solid rgba(0, 0, 0, 0.365); border-radius: 50px; margin-top: 10px;">
             <div class="cerrar-sesion">
               <div class="imagencontainer-close img-fluid" *ngIf="foto; else inicial">
-                <img style="border-radius: 50%;" class="imagen" [src]="usuario?.foto_perfil" alt="Avatar">
+                <img style="border-radius: 50%;" class="imagen" [src]="usuario.foto_perfil" alt="Avatar">
               </div>
               <ng-template #inicial>
-                <app-initials-avatar name="{{usuario?.nombre_usuario}}"></app-initials-avatar>
+                <app-initials-avatar name="{{usuario.nombre_usuario}}"></app-initials-avatar>
               </ng-template>
               <div class="tras"><mat-icon>more_horiz</mat-icon></div>
             </div>
@@ -142,7 +142,7 @@
           <img [src]="usuario.foto_perfil" alt="Avatar">
         </div>
         <ng-template #inicial>
-          <app-initials-avatar name="{{usuario?.nombre_usuario}}"></app-initials-avatar>
+          <app-initials-avatar name="{{usuario.nombre_usuario}}"></app-initials-avatar>
         </ng-template>
         <div class="mensaje">
           <form (ngSubmit)="onSubmit()">
