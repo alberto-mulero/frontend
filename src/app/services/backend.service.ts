@@ -130,7 +130,7 @@ export class BackendService {
   seguidorNuevo(seguidores: any): Observable<any> {
     const url = 'https://backend-production-3fb8.up.railway.app/';
    
-    return this.http.post(url + 'seguidorNuevo',seguidores);
+    return this.http.post(url + 'seguidorNuevo', seguidores);
   }
   comprobarSeguidor(comprobar: any): Observable<any> {
     const url = 'https://backend-production-3fb8.up.railway.app/';

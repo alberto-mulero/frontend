@@ -173,8 +173,8 @@ export class PerfilComponent implements OnInit {
 
     const seguidor = {
       fecha: formatoBase,
-      seguidor_id: this.usuario.id,
-      seguido_id: this.usuarioSesion.id
+      seguidor_id: this.usuarioSesion.id,
+      seguido_id: this.usuario.id
     };
     this.backandService.seguidorNuevo(seguidor).subscribe(
       (response) => {
