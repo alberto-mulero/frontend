@@ -157,10 +157,7 @@ export class InicioComponent implements OnInit {
           (response) => {
             this.publicaciones = response.filter((publicacion) => {
               return usuariosSeguidos.includes(publicacion.id_usuario);
-            });
-            //console.log(this.publicaciones);
-            this.contarPalabras(this.publicaciones);
-            
+            });            
           },
           (error) => {
             console.error(error);

@@ -320,18 +320,18 @@
     <!-- TENDENCIAS -->
     <div class="col-lg-4 ultima p-0">
       <div class="ultima-container m-0">
-      <div>
-        <form (ngSubmit)="busquedadSeguidor()">
-          <div class="container-buscador">
-            <mat-icon id="icono">search</mat-icon>
-            <input type="text" placeholder="Buscar seguidor..." id="buscador" name="seguidor" [(ngModel)]="seguidor"
-              (keydown.enter)="busquedadSeguidor()" />
-          </div>
+        <div>
+
+          <form (ngSubmit)="busquedadSeguidor()">
+            <div class="container-buscador">
+              <mat-icon id="icono">search</mat-icon>
+              <input type="text" placeholder="Buscar seguidor..." id="buscador" name="seguidor" [(ngModel)]="seguidor" (keydown.enter)="busquedadSeguidor()"/>
+            </div>
         </form>
         <div class="tendencia">
-
+          
           <h3 class="tendencia-titulo">Que esta pasando?</h3>
-
+          
           <mat-card class="card">
             <mat-card-content>
               <ul>
@@ -339,18 +339,19 @@
               </ul>
             </mat-card-content>
           </mat-card>
-
-
-
+          
+          
+          
         </div>
-        </div>
-        <nav aria-label="Footer" role="navigation" class="enlaces">
-          <a href="">Politica de privacidad</a>
-          <a href="">Politicas de Cookies</a>
-          <a href="">Terminos de servicios</a>
-          <a href="">Informacion de Anuncios</a>
-          <p>© 2023 X Corp.</p>
-        </nav>
       </div>
-    </div>
+          <nav aria-label="Footer" role="navigation" class="enlaces">
+              <a href="">Politica de privacidad</a>
+              <a href="">Politicas de Cookies</a>
+              <a href="">Accesibilidad</a>
+              <a href="">Terminos de servicios</a>
+              <a href="">Informacion de Anuncios</a>
+              <p>© 2023 X Corp.</p>
+          </nav>
+      </div>
+  </div>
   </div>
