@@ -196,9 +196,7 @@ export class PerfilComponent implements OnInit {
     this.backandService.comprobarSeguidor(comprobar).subscribe(
       response => {
         console.log(response);
-        if (response.id) {
           this.seguido = response;
-        }
       },
       error => {
         console.error(error);
