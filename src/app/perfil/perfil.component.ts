@@ -187,6 +187,24 @@ export class PerfilComponent implements OnInit {
     );
   }
 
+  dejarSeguir() {
+    const seguidor = {
+      seguidor_id: this.usuarioSesion.id,
+      seguido_id: this.usuario.id
+    };
+  
+    this.backandService.dejarSeguirUsuario(seguidor).subscribe(
+      (response) => {
+        console.log(response);
+        // Aquí puedes realizar cualquier otra acción después de dejar de seguir al usuario
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+  
+
   comprobarUsuario(usuario: any) {
     const comprobar = {
       seguidor_id: this.usuarioSesion.id,
