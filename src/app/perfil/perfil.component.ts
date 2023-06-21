@@ -161,18 +161,18 @@ export class PerfilComponent implements OnInit {
 
     let fecha = new Date();
 
-    let anio = fecha.getFullYear(); // Obtiene el año en formato AAAA
-    let mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); // Obtiene el mes en formato MM
-    let dia = fecha.getDate().toString().padStart(2, '0'); // Obtiene el día en formato DD
+    // let anio = fecha.getFullYear(); // Obtiene el año en formato AAAA
+    // let mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); // Obtiene el mes en formato MM
+    // let dia = fecha.getDate().toString().padStart(2, '0'); // Obtiene el día en formato DD
 
-    let horas = fecha.getHours().toString().padStart(2, '0'); // Obtiene las horas en formato HH
-    let minutos = fecha.getMinutes().toString().padStart(2, '0'); // Obtiene los minutos en formato MI
-    let segundos = fecha.getSeconds().toString().padStart(2, '0'); // Obtiene los segundos en formato SS
+    // let horas = fecha.getHours().toString().padStart(2, '0'); // Obtiene las horas en formato HH
+    // let minutos = fecha.getMinutes().toString().padStart(2, '0'); // Obtiene los minutos en formato MI
+    // let segundos = fecha.getSeconds().toString().padStart(2, '0'); // Obtiene los segundos en formato SS
 
-    let formatoBase = `${anio}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;
+    // let formatoBase = `${anio}-${mes}-${dia} ${horas}:${minutos}:${segundos}`;
 
     const seguidor = {
-      fecha: formatoBase,
+      fecha: fecha,
       seguidor_id: this.usuario.id,
       seguido_id: this.usuarioSesion.id
     };
